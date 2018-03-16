@@ -14,6 +14,7 @@ const renderPage = () =>{
             <button onClick={onVisibleClick}>{isVisible? "Click to hide" : "Click to visible"}</button>
             {isVisible && <p>Visible Text</p>}
         </div>
+        
     );
 
     ReactDOM.render(template, mainApp);
