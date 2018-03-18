@@ -2,7 +2,7 @@ class IndecisionApp extends React.Component{
     render(){
         const title = "Indecision";
         const subtitle= "Let put your life in hands of computer.";
-        const options = ["Item One", "Item Two", "Item Four"];
+        const options = ["Item One", "Item Two", "Item Four", "Item Five"];
         return (
             <div>
                 <Header title={title} subtitle={subtitle}/>
@@ -26,19 +26,27 @@ class Header extends React.Component{
 }
 
 class Action extends React.Component{
+    clickHandle(){
+        alert('Clicked');
+    }
+
     render(){
         return (
             <div>
-                <button>What should I do?</button>
+                <button onClick={this.clickHandle}>What should I do?</button>
             </div>
         );
     }
 }
 
 class Options extends React.Component{
+    removeAll(){
+        alert('Remove All');
+    }
     render(){
         return (
             <div>
+                <button onClick={this.removeAll}>Remove All</button>
                 {
                     this.props.options.map((option)  => <Option key={option} optionText={option} />)
                 }
@@ -58,10 +66,23 @@ class Option extends React.Component{
 }
 
 class AddOptions extends React.Component{
+    handleAddOption(e){
+        e.preventDefault();
+        const option = e.target.elements.option.value;
+
+        if (option){
+            alert(option);
+    //     app.options.push(option);
+    //     e.target.elements.option.value = '';
+        }
+    }
     render(){
         return (
             <div>
-                <button>Add Option</button>
+                <form onSubmit={this.handleAddOption}>    
+                    <input type="text" name="option"/>
+                    <button>Add Option</button>
+                </form>
             </div>
         );
     }
