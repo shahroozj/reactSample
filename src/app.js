@@ -40,8 +40,13 @@ class Action extends React.Component{
 }
 
 class Options extends React.Component{
+    //very important to override the constructor to bind the event
+    constructor(props){
+        super(props);
+        this.removeAll = this.removeAll.bind(this);
+    }
     removeAll(){
-        alert('Remove All');
+        console.log(this.props.options);
     }
     render(){
         return (
@@ -68,7 +73,7 @@ class Option extends React.Component{
 class AddOptions extends React.Component{
     handleAddOption(e){
         e.preventDefault();
-        const option = e.target.elements.option.value;
+        const option = e.target.elements.option.value.trim();
 
         if (option){
             alert(option);
