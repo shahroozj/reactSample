@@ -29,6 +29,13 @@ var IndecisionApp = function (_React$Component) {
     _createClass(IndecisionApp, [{
         key: "handleDeleteAllOptions",
         value: function handleDeleteAllOptions() {
+            // this.setState(() => {
+            //     return {
+            //         options : []
+            //     }
+            // })
+
+            //Same action with short code
             this.setState(function () {
                 return {
                     options: []
@@ -51,9 +58,7 @@ var IndecisionApp = function (_React$Component) {
             }
 
             this.setState(function (prevState) {
-                return {
-                    options: prevState.options.concat(option)
-                };
+                return { options: prevState.options.concat(option) };
             });
         }
     }, {
@@ -197,10 +202,14 @@ var AddOptions = function (_React$Component2) {
             var option = e.target.elements.option.value.trim();
             var error = this.props.handleAddOption(option);
 
+            // this.setState(()=>{
+            //     return{
+            //         error // it is equal to ===>   error: error
+            //     }
+            // });
+
             this.setState(function () {
-                return {
-                    error: error // it is equal to ===>   error: error
-                };
+                return { error: error };
             });
         }
     }, {
