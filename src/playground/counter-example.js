@@ -9,6 +9,19 @@ class Counter extends React.Component{
         }
     }
 
+    componentDidMount(){
+        const countString = localStorage.getItem('count');
+        if (!isNaN(countString)){
+            this.setState(() => ({ count : parseInt(countString, 10) }));
+        }
+    }
+
+    componentDidUpdate(preProps, preState){
+        if(preState.count !== this.state.count){
+            localStorage.setItem('count', this.state.count);
+        }
+    }
+
     handleAdd(){
         this.setState((prevState) => {
             return{
