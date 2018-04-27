@@ -13,5 +13,8 @@ module.exports = {
             exclude: /node_modules/
         }]
     },
-    devtool: 'cheap-module-eval-source-map' //it is for development and debuging the code
+    devtool: 'cheap-module-eval-source-map', //it is for development and debuging the code
+    devServer:{
+        contentBase : path.join(__dirname, 'public')
+    }
 };
