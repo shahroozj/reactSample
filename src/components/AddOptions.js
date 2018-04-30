@@ -1,14 +1,21 @@
 import React from "react";
 
 export default class AddOptions extends React.Component{
-    constructor(props){
-        super(props);
-        this.handleAdd = this.handleAdd.bind(this);
-        this.state = {
-            error : undefined
-        }
+    //Old Method of defining Property and method
+    // constructor(props){
+    //     super(props);
+    //     this.handleAdd = this.handleAdd.bind(this);
+    //     this.state = {
+    //         error : undefined
+    //     }
+    // }
+
+    //New Method of defining Property and method
+    state = {
+        error : undefined
     }
-    handleAdd(e){
+    
+    handleAdd = (e) =>{
         e.preventDefault();
         const option = e.target.elements.option.value.trim();
         const error = this.props.handleAddOption(option);
