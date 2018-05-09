@@ -1,4 +1,4 @@
-# Blank Project
-This is a blank react project to create react project from skrach
+# reactSample
+This is a sample project to learn react
 
-
+I am trying to learn react, So I have created this project.
